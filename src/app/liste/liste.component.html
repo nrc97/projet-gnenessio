@@ -1,0 +1,24 @@
+<div class="container" style="text-align: center">
+  <mat-form-field class="row">
+    <mat-label>Promotion</mat-label>
+    <mat-select (selectionChange)="onChangePromotion($event)">
+      <mat-option value="0">Toutes les promotions</mat-option>
+      <div *ngFor="let promotion of annees">
+        <mat-option [value]="promotion"> {{ promotion }} </mat-option>
+      </div>
+    </mat-select>
+  </mat-form-field>
+  <div class="row member" *ngFor="let etudiant of etudiants; let i=index">
+    <div class="col-sm-7" style="text-align: left">
+        <h2>{{ etudiant.nom }} {{ etudiant.prenoms }}</h2>
+    </div>
+    <div class="col-sm-4 col-sm-offset-1" style="text-align: right">
+      <div class="row">
+        {{ etudiant.promotion }}
+      </div>
+      <div class="row">
+        <button mat-raised-button color="primary" (click)="onLoadDescription(etudiant)">Details</button>
+      </div>
+    </div>
+  </div>
+</div>

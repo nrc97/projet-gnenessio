@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <span >Annuaire des ingénieurs MIS</span>
+  <span ><button mat-button class="separate" routerLink="profil">Profil</button></span>
+  <span ><button mat-button class="separate" routerLink="liste">Liste des MIS</button></span>
+  <span *ngIf="etudiant != undefined"><button *ngIf="etudiant.type == 'mg'" mat-button class="separate" routerLink="admin">Administration</button></span>
+  <span class="example-fill-remaining-space"></span>
+  <span ><button mat-flat-button routerLink="auth">Connection</button></span>
+</mat-toolbar>

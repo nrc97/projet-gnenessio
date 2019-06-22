@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row title">
+    {{ titre }}
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <div class="container field page">
+      <mat-form-field appearance="legacy">
+        <mat-label>Promotion</mat-label>
+        <input type="number" matInput placeholder="Saisissez la promotion..." formControlName="promotion" required/>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nom</mat-label>
+        <input type="text" matInput placeholder="Saisissez le nom..." formControlName="nom" required/>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Prénoms</mat-label>
+        <input type="text" matInput placeholder="Saisissez les prenoms..." formControlName="prenoms" required/>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput placeholder="Saisissez l' adresse email..." formControlName="email" required/>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Mot de passe</mat-label>
+        <input type="password" matInput placeholder="Saisissez un mot de passe..." formControlName="password" required/>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Téléphone</mat-label>
+        <input type="text" matInput placeholder="Saisissez le numéro de téléphone..." formControlName="telephone" required/>
+      </mat-form-field>
+      <mat-form-field *ngIf="authService.etudiant.type == 'mg'">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type" required>
+          <mat-option value="sm">Simple membre</mat-option>
+          <mat-option value="mg">Manager général</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Entreprise</mat-label>
+        <input type="text" matInput placeholder="Saisissez son entreprise..." formControlName="entreprise"/>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Poste</mat-label>
+        <input type="text" matInput placeholder="Saisissez son poste..." formControlName="poste"/>
+      </mat-form-field>
+      <div>
+        <span><button type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid">Enregistrer</button></span>
+        <span><button mat-raised-button color="accent" (click)="onCancel()">Annuler</button></span>
+      </div>
+    </div>
+  </form>
+  
+</div>

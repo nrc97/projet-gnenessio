@@ -1,0 +1,24 @@
+<div class="container" style="text-align: center">
+    <mat-card>
+        <mat-card-title>
+            MIS {{ etudiant.promotion }} [{{ etudiant.type }}]
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{ etudiant.nom }} {{ etudiant.prenoms }}
+        </mat-card-subtitle>
+        <mat-card-content>
+            <mat-divider></mat-divider>
+            <h2>Contacts</h2>
+            <div><span>Telephone : </span><span>{{ etudiant.telephone }}</span> </div>
+            <div><span>Email : </span><span>{{ etudiant.email }}</span></div>
+            <mat-divider></mat-divider>
+            <h2>Profession</h2>
+            <div><span>Entreprise : </span><span>{{ etudiant.entreprise }}</span></div>
+            <div><span>Poste : </span><span>{{ etudiant.poste }}</span></div>
+        </mat-card-content>
+    </mat-card>
+    <div>
+        <button mat-raised-button (click)="onEditProfil()">Modifier</button>
+    </div>
+    
+</div>

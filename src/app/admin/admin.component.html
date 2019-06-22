@@ -1,0 +1,28 @@
+<div class="container" style="text-align: center">
+  <mat-form-field class="row">
+    <mat-label>Promotion</mat-label>
+    <mat-select (selectionChange)="onChangePromotion($event)">
+      <mat-option value="0">Toutes les promotions</mat-option>
+      <div *ngFor="let promotion of annees">
+        <mat-option [value]="promotion"> {{ promotion }} </mat-option>
+      </div>
+    </mat-select>
+  </mat-form-field>
+  <div class="row">
+      <button mat-raised-button color="primary" (click)="onCreateMembre(etudiant)"><mat-icon>add</mat-icon>Ajouter un MIS</button>
+  </div>
+  <div class="row member" *ngFor="let etudiant of etudiants; let i=index">
+    <div class="col-sm-7" style="text-align: left">
+        <h2>{{ etudiant.nom }} {{ etudiant.prenoms }}</h2>
+    </div>
+    <div class="col-sm-offset=1 col-sm-4" style="text-align: right">
+      <div class="row">
+          <span><button mat-icon-button (click)="onEditMembre(etudiant)"><mat-icon>edit</mat-icon></button></span>
+          <span><button mat-icon-button (click)="onDeleteMembre(etudiant)"><mat-icon>delete</mat-icon></button></span>
+      </div>
+      <div class="row">
+          <button mat-raised-button color="primary" (click)="onLoadDescription(etudiant)">Details</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row title">
+    Authentification
+  </div>
+  <div class="row pic">
+    <img class="picture" src="./assets/images/logo-mis.jpg" alt="logo-mis">
+  </div>
+  <form [formGroup]="authForm" (ngSubmit)="authenticate()">
+    <div class="container field page">
+      <mat-form-field appearance="legacy">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput placeholder="Saisissez votre adresse email..." formControlName="email"/>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Mot de passe</mat-label>
+        <input type="password" matInput placeholder="Saisissez votre mot de passe..." formControlName="password"/>
+      </mat-form-field>
+      <p *ngIf="this.authService.erreur!=''" style="color:'#00ff00'; text-align: center">{{this.authService.erreur.message}}</p>
+      <p *ngIf="isAuth" style="color:'#00ff00'; text-align: center">Vous ête connecté en tant que {{ etudiant.nom }} {{ etudiant.prenoms }}</p>
+      <p *ngIf="!isAuth" style="color:'#ff0000'; text-align: center">Veuillez-vous connecter!</p>
+      <button type="submit" mat-raised-button color="primary" *ngIf="!isAuth" [disabled]="authForm.invalid">Se connecter</button>
+      <button type="submit" mat-raised-button color="accent" *ngIf="isAuth">Se déconnecter</button>
+      <div *ngIf="!isAuth">
+        <p>Vous n'avez pas de compte ? Contactez un admin pour en avoir!</p>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,67 @@
+.cle
+{
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+.valeur
+{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.picture
+{
+    max-width: 10%;
+    max-height: 10%;
+    margin: 5px;
+
+}
+.petite_cle
+{
+    text-decoration: underline;
+    font-weight: bold;
+    font-style: italic;
+}
+.petite_valeur
+{
+    font-weight: bold;
+}
+.example-fill-remaining-space {
+/* This fills the remaining space, by using flexbox. 
+    Every toolbar row uses a flexbox row layout. */
+flex: 1 1 auto;
+}
+.bouton_add
+{
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+.en_cours
+{
+    background-color: palegreen;
+}
+.termine
+{
+    background-color: lightcoral;
+}
+.card
+{
+    text-align:center;
+    font-weight: bold;
+    border-color: cornflowerblue;
+    box-shadow: gray 5px 5px 5px;
+}
+.card > mat-card-content > p
+{
+    font-style: italic;
+    text-decoration: underline
+}
+.panel
+{
+    margin: 10px;
+}
+.card_title
+{
+    text-align:center;
+    box-shadow: gray 5px 5px 5px;
+}
