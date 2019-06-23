@@ -58,11 +58,7 @@ login(user: User) {
           console.log(data);
           const user: User = new User(etudiant.email, etudiant.password);
           this.login(user).then(() => {
-            if (type === 'admin-edit' || type === 'add') {
-              this.router.navigate(['admin']);
-            } else if (type === 'edit') {
-              this.router.navigate(['profil']);
-            }
+            this.router.navigate(['profil']);
             resolve();
           });
         }

@@ -9,16 +9,17 @@
     </mat-select>
   </mat-form-field>
   <div class="row member" *ngFor="let etudiant of etudiants; let i=index">
-    <div class="col-sm-7" style="text-align: left">
-        <h2>{{ etudiant.nom }} {{ etudiant.prenoms }}</h2>
+    <div class="row">
+      <div class="col-sm-6" style="text-align: left">
+        <h2>{{ etudiant.nom }} {{ etudiant.prenoms }} ({{ etudiant.promotion }})</h2> 
+      </div>
+      <div class="col-sm-6" style="text-align: right">
+        <h3 class="row" style="text-align: center">{{ etudiant.poste }}</h3>
+        <h3 class="row" style="text-align: center">{{ etudiant.entreprise }}</h3>
+      </div>  
     </div>
-    <div class="col-sm-4 col-sm-offset-1" style="text-align: right">
-      <div class="row">
-        {{ etudiant.promotion }}
-      </div>
-      <div class="row">
-        <button mat-raised-button color="primary" (click)="onLoadDescription(etudiant)">Details</button>
-      </div>
+    <div class="row">
+      <button mat-raised-button color="primary" (click)="onLoadDescription(etudiant)">Details</button>
     </div>
   </div>
 </div>

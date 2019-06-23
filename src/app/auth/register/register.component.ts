@@ -54,7 +54,12 @@ export class RegisterComponent implements OnInit {
     etudiant.type = type;
     etudiant.entreprise = entreprise;
     etudiant.poste = poste;
-    this.authService.register(etudiant, this.type);
+    if (this.type === 'edit') {
+      this.authService.register(etudiant, this.type);
+    } else {
+      this.adminService.register(etudiant, this.type);
+    }
+    
   }
   initForm() {
     const date = new Date();
@@ -72,7 +77,11 @@ export class RegisterComponent implements OnInit {
   }
 
   onCancel() {
-    this.router.navigate(['admin']);
+    if (this.type === 'edit') {
+      this.router.navigate(['profil']);
+    } else {
+      this.router.navigate(['admin']);
+    }
   }
 
 }

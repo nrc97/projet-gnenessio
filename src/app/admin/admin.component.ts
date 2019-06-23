@@ -40,5 +40,8 @@ export class AdminComponent implements OnInit {
   onChangePromotion($event) {
     this.adminService.getPromotion($event.value);
   }
-
+  onLoadDescription(etudiant: Etudiant) {
+    this.adminService.selectedEtudiant = etudiant;
+    this.router.navigate(['mis-profil']);
+  }
 }
